@@ -938,8 +938,6 @@ def main():
     is_distributed, rank, world_size, gpu = init_distributed_mode()
     setup_logger(CHECKPOINT_DIR, rank)
     device = torch.device(f"cuda:{gpu}")
-    
-    log_print(f"Starting Optimized Training (MAE-BlockMask-NoEMA) on A800 | World Size: {world_size}")
     log_print(f"Batch Size: {BATCH_SIZE} | Workers: {NUM_WORKERS}")
 
     try:
