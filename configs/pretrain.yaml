@@ -1,0 +1,42 @@
+# OmniSleep pretraining defaults.
+# The current CLI reads defaults from src/omnisleep/config.py; this file documents
+# the expected values for experiment tracking and future config-loader support.
+
+data:
+  train_list_path: ./dataset/splits/train_files.txt
+  val_list_path: ./dataset/splits/val_files.txt
+  checkpoint_dir: ./checkpoints/checkpoint_model_bert_block
+  pretrained_p1_path: ./checkpoints/pretrained/p1_ep30.pth
+  pretrained_p2_path: null
+
+phases:
+  skip_phase1: true
+  skip_phase2: false
+  epochs_phase1: 50
+  epochs_phase2: 50
+
+model:
+  epoch_len_high: 3000
+  epoch_len_low: 300
+  seq_len: 180
+  embedding_dim: 256
+  projection_dim: 128
+  pool_window: 60
+  mae_mask_ratio: 0.5
+  mask_block_min: 5
+  mask_block_max: 20
+
+training:
+  batch_size: 24
+  num_workers: 12
+  prefetch_factor: 4
+  seed: 42
+  lr_phase1: 0.0008
+  lr_phase2: 0.0005
+  temperature: 0.1
+  max_negatives: 1024
+  local_loss_weight: 0.2
+  gradient_accumulation_steps: 1
+  use_torch_compile: false
+  use_channels_last: true
+  use_sync_bn: false

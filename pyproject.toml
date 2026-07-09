@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "omnisleep"
+version = "0.1.0"
+description = "Multimodal sleep representation pretraining for PSG signals."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+dependencies = [
+    "h5py",
+    "numpy",
+    "torch",
+    "tqdm",
+]
+
+[project.scripts]
+omnisleep-pretrain = "omnisleep.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

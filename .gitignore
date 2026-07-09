@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# Data and generated artifacts
+dataset/
+checkpoints/
+logs/
+runs/
+outputs/
+*.h5
+*.hdf5
+*.pt
+*.pth
+*.ckpt
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
